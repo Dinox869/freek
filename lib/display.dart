@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:freek/view.dart';
+import 'package:freek/acc_extr.dart';
+import 'package:freek/drn_food.dart';
 
 class add_Item extends StatefulWidget
 {
@@ -95,29 +97,30 @@ Widget _Example0Tile (Color background, String texts, String text,int number,Bui
         {
           //accomodation
           Navigator.push(context,MaterialPageRoute(builder: (context)=>
-              view(number: 1,
-                name: "Accomodation",
-              )
+              acc()
           ));
         }
         else if(number ==2 )
         {
           //food
           Navigator.push(context,MaterialPageRoute(builder: (context)=>
-              view(number: 2,name: "Food")
+              drn(num: 1)
           ));
         }else if(number == 3)
         {
+          //drinks
           Navigator.push(context,MaterialPageRoute(builder: (context)=>
-              view(number: 3,name: "Drinks")
+              drn(num: 2)
           ));
         }else if(number == 5)
         {
+          //Extras...
           Navigator.push(context,MaterialPageRoute(builder: (context)=>
-              view(number: 5,name: "Extra's")
+             acc()
           ));
         }else
         {
+          //Home_page..
           Navigator.push(context,MaterialPageRoute(builder: (context)=>
               view(number: 1,name: "Home page")
           ));
@@ -142,7 +145,8 @@ Widget _Example0Tile (Color background, String texts, String text,int number,Bui
           Padding(padding: EdgeInsets.only(top: 06,left: 03,right: 03),
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Text(text,style: TextStyle(
+              child: Text(
+                text,style: TextStyle(
                   color: Colors.white,
                   fontSize: 20
               ),),
